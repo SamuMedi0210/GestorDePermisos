@@ -2,6 +2,8 @@ from models.user_model import UserModel
 from models.permiso_model import PermisoModel
 from views.admin_view import AdminView
 from views.permission_view import PermissionView
+from views.commission_view import CommissionView
+from views.print_view import PrintView
 
 class MainController:
     def __init__(self, page):
@@ -29,6 +31,8 @@ class MainController:
             lista_permisos=permisos,
             on_edit=self.show_edit_panel,
             on_delete=self.delete_permiso,
+            on_view_commissions=self.show_commission_panel,
+            on_print=self.show_print_panel,
         )
         self.page.add(admin_view)
         self.page.update()
@@ -68,3 +72,25 @@ class MainController:
     def delete_permiso(self, permiso_id: int):
         PermisoModel.delete(permiso_id)
         self.show_admin_panel()
+
+    # ── VER COMISIONES ────────────────────────────────────────────────────────
+    def show_commission_panel(self):
+        self.page.clean()
+        permisos = PermisoModel.get_all()
+        commission_view = CommissionView(
+            on_back=self.show_admin_panel,
+            lista_permisos=permisos,
+        )
+        self.page.add(commission_view)
+        self.page.update()
+
+    # ── VISTA DE IMPRESIÓN ────────────────────────────────────────────────────
+    def show_print_panel(self):
+        self.page.clean()
+        permisos = PermisoModel.get_all()
+        print_view = PrintView(
+            on_back=self.show_admin_panel,
+            lista_permisos=permisos,
+        )
+        self.page.add(print_view)
+        self.page.update()

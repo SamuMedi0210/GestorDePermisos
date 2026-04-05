@@ -1,12 +1,12 @@
 import flet as ft
 
 class AdminView(ft.Column):
-    def __init__(self, on_add_permission=None, lista_permisos=None, on_edit=None, on_delete=None):
+    def __init__(self, on_add_permission=None, lista_permisos=None, on_edit=None, on_delete=None, on_view_commissions=None, on_print=None):
         super().__init__()
         self.expand = True
         self.alignment = ft.MainAxisAlignment.START
         self.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-        
+
         self.on_edit = on_edit
         self.on_delete = on_delete
 
@@ -23,9 +23,14 @@ class AdminView(ft.Column):
                     on_click=lambda e: on_add_permission() if on_add_permission else None
                 ),
                 ft.PopupMenuItem(
-                    content=ft.Text("Ver Solicitudes"),
-                    icon=ft.Icons.ASSIGNMENT,
-                    on_click=lambda e: print("Navegar a Solicitudes")
+                    content=ft.Text("Personal en Comisión"),
+                    icon=ft.Icons.PEOPLE,
+                    on_click=lambda e: on_view_commissions() if on_view_commissions else None
+                ),
+                ft.PopupMenuItem(
+                    content=ft.Text("Imprimir Registros"),
+                    icon=ft.Icons.PRINT,
+                    on_click=lambda e: on_print() if on_print else None
                 ),
             ]
         )
