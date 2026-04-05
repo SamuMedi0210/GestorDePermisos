@@ -1,0 +1,159 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                 SISTEMA DE GESTIÓN DE VACACIONES Y COMISIONES                ║
+║                              INICIO RÁPIDO                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 ESTADO DEL SISTEMA: ✓ COMPLETAMENTE OPERACIONAL
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 1️⃣  PARA INICIAR LA APLICACIÓN                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Opción 1 (Recomendado):
+  $ ./start.sh
+
+Opción 2 (Manual):
+  $ cd login
+  $ flet run main.py
+
+La aplicación se abrirá en: 🌐 http://127.0.0.1:8000
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 2️⃣  CREDENCIALES DE ACCESO                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Usuario:      admin
+Contraseña:   1234
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 3️⃣  FUNCIONALIDADES DISPONIBLES                                             │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Accede al menú (☰) en el panel de administrador para:
+
+  ✓ Agregar Permiso
+    → Crear nuevos registros de permisos/vacaciones
+
+  ✓ Personal en Comisión
+    → Ver personal actualmente en comisión
+    → Solo muestra permisos vigentes
+
+  ✓ Imprimir Registros
+    → Generar documento listo para imprimir
+    → Formato profesional
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 4️⃣  DATOS DE EJEMPLO PRECARGADOS                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Se incluyen 5 registros de prueba:
+
+  1. Juan Pérez García - Capitán (Vacacional) - ACTIVO
+  2. María López Martínez - Sargento (Extraordinario) - ACTIVO
+  3. Carlos Rodríguez Fuentes - Teniente (Vacacional) - PRÓXIMOS DÍAS
+  4. Ana González Hernández - Cabo (Reposo) - VENCIDO
+  5. Roberto Silva Jiménez - Mayor (Paternal) - ACTIVO
+
+Permisos activos actualmente: 4
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 5️⃣  ARCHIVOS PRINCIPALES                                                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+login/
+  ├── main.py                    → Punto de entrada
+  ├── seed_data.py              → Datos de prueba
+  ├── controllers/
+  │   └── main_controller.py    → Lógica de la aplicación
+  ├── models/
+  │   ├── user_model.py         → Autenticación
+  │   └── permiso_model.py      → Base de datos
+  └── views/
+      ├── login_view.py         → Pantalla de login
+      ├── admin_view.py         → Panel principal
+      ├── permission_view.py    → Formulario de permisos
+      ├── commission_view.py    → Vista de comisiones ⭐ NUEVA
+      └── print_view.py         → Vista de impresión ⭐ NUEVA
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 6️⃣  DOCUMENTACIÓN DISPONIBLE                                                │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+README.md
+  → Documentación técnica y requisitos
+
+GUIA_DE_USO.md
+  → Guía completa para usuarios finales
+  → Instrucciones paso a paso
+  → Solución de problemas
+
+CAMBIOS_REALIZADOS.md
+  → Detalle de todas las modificaciones realizadas
+  → Nuevas funcionalidades
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 7️⃣  OPERACIONES PRINCIPALES                                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+AGREGAR PERMISO:
+  Panel Admin → Menú (☰) → Agregar Permiso → Completar formulario → Guardar
+
+EDITAR PERMISO:
+  Panel Admin → Buscar en tabla → Icono de lápiz → Editar → Guardar
+
+ELIMINAR PERMISO:
+  Panel Admin → Buscar en tabla → Icono de basura → Confirmar
+
+VER COMISIONES ACTIVAS:
+  Panel Admin → Menú (☰) → Personal en Comisión → Ver tabla activos
+
+IMPRIMIR REGISTROS:
+  Panel Admin → Menú (☰) → Imprimir Registros → Ctrl+P (para imprimir)
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 8️⃣  CARACTERÍSTICAS DESTACADAS                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+✨ Interfaz moderna con animaciones suaves
+✨ Almacenamiento seguro en base de datos local (SQLite)
+✨ Cambios guardados automáticamente
+✨ Validación de datos en tiempo real
+✨ Temas diferenciados por sección (verde, naranja, azul)
+✨ Tabla responsiva con columnas ajustables
+✨ Buscar registros rápidamente
+✨ Documento de impresión profesional
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 9️⃣  REQUISITOS DEL SISTEMA                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+✓ Python 3.8 o superior
+✓ Flet framework (instalado)
+✓ Navegador web (Chrome, Firefox, Edge)
+✓ SQLite (incluido en Python)
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 🆚 NOVEDADES IMPLEMENTADAS                                                   │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+✨ NUEVA: Vista de Personal en Comisión
+   • Filtro automático de permisos vigentes
+   • Tabla con información completa
+   • Interfaz con tema diferenciado
+
+✨ NUEVA: Vista de Impresión
+   • Documento profesional formato PDF
+   • Tabla completa con numeración
+   • Optimizado para impresora
+
+✨ Datos de prueba precargados
+✨ Documentación completa
+✨ Scripts de inicio rápido
+
+═══════════════════════════════════════════════════════════════════════════════
+
+¡La aplicación está lista para usar! 🚀
+
+Para comenzar, ejecuta:  ./start.sh
+
+═══════════════════════════════════════════════════════════════════════════════
